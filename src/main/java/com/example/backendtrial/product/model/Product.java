@@ -1,6 +1,9 @@
 package com.example.backendtrial.product.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PositiveOrZero;
+import jakarta.validation.constraints.Size;
 
 @Entity // maps java to mysql
 @Table(name = "product")
@@ -11,12 +14,15 @@ public class Product {
     @Column(name = "id")
     private int id;
 
+    @NotNull(message = "Name is required")
     @Column(name = "name")
     private String name;
 
+    @Size(message = "Description must be 20 characters long")
     @Column(name = "description")
     private String description;
 
+    @PositiveOrZero(message = "Price must not be negative")
     @Column(name = "price")
     private Double price;
 
