@@ -2,12 +2,10 @@ package com.example.backendtrial.product.services;
 
 import com.example.backendtrial.product.Command;
 import com.example.backendtrial.product.ProductRepository;
-import com.example.backendtrial.product.exceptions.ProductNotFoundException;
+import com.example.backendtrial.exceptions.ProductNotFoundException;
 import com.example.backendtrial.product.model.Product;
 import com.example.backendtrial.product.model.ProductDTO;
 import com.example.backendtrial.product.model.UpdateProductCommand;
-import com.example.backendtrial.product.validators.ProductValidator;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 

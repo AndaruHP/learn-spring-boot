@@ -1,13 +1,9 @@
 package com.example.backendtrial.product;
 
-import com.example.backendtrial.product.exceptions.ProductNotFoundException;
-import com.example.backendtrial.product.model.ErrorResponse;
 import com.example.backendtrial.product.model.Product;
 import com.example.backendtrial.product.model.ProductDTO;
 import com.example.backendtrial.product.model.UpdateProductCommand;
 import com.example.backendtrial.product.services.*;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

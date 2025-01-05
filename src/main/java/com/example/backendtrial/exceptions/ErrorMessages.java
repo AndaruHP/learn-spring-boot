@@ -1,4 +1,4 @@
-package com.example.backendtrial.product.exceptions;
+package com.example.backendtrial.exceptions;
 
 public enum ErrorMessages {
     PRODUCT_NOT_FOUND("Product Not Found"),

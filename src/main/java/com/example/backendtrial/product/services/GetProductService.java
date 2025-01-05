@@ -2,7 +2,7 @@ package com.example.backendtrial.product.services;
 
 import com.example.backendtrial.product.ProductRepository;
 import com.example.backendtrial.product.Query;
-import com.example.backendtrial.product.exceptions.ProductNotFoundException;
+import com.example.backendtrial.exceptions.ProductNotFoundException;
 import com.example.backendtrial.product.model.Product;
 import com.example.backendtrial.product.model.ProductDTO;
 import org.springframework.http.ResponseEntity;

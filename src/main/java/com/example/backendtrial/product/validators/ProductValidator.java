@@ -1,7 +1,7 @@
 package com.example.backendtrial.product.validators;
 
-import com.example.backendtrial.product.exceptions.ErrorMessages;
-import com.example.backendtrial.product.exceptions.ProductNotValidException;
+import com.example.backendtrial.exceptions.ErrorMessages;
+import com.example.backendtrial.exceptions.ProductNotValidException;
 import com.example.backendtrial.product.model.Product;
 import com.mysql.cj.util.StringUtils;
 
