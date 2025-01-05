@@ -6,6 +6,8 @@ import com.example.backendtrial.exceptions.ProductNotFoundException;
 import com.example.backendtrial.product.model.Product;
 import com.example.backendtrial.product.model.ProductDTO;
 import com.example.backendtrial.product.model.UpdateProductCommand;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +23,9 @@ public class UpdateProductService implements Command<UpdateProductCommand, Produ
     }
 
     @Override
+    @CachePut(value = "productCache", key="#command.getId()")
+    // Evict -> throws it away only
+    // Put -> throws it away then puts the return value of the method in the cache
     public ResponseEntity<ProductDTO> execute(UpdateProductCommand command) {
         Optional<Product> productOptional = productRepository.findById(command.getId());
         if (productOptional.isPresent()) {
