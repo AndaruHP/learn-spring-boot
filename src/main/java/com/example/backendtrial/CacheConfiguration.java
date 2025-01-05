@@ -1,4 +1,4 @@
-package com.example.backendtrial.product;
+package com.example.backendtrial;
 
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CacheEvict;

@@ -1,6 +1,6 @@
 package com.example.backendtrial.product.services;
 
-import com.example.backendtrial.product.Command;
+import com.example.backendtrial.Command;
 import com.example.backendtrial.product.ProductRepository;
 import com.example.backendtrial.exceptions.ProductNotFoundException;
 import com.example.backendtrial.product.model.Product;
