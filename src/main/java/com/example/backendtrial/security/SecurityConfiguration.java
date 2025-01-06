@@ -32,9 +32,10 @@ public class SecurityConfiguration {
         return httpSecurity
                 .csrf(csrf -> csrf.disable()) // allows for POST, PUT, DELETE
                 .authorizeHttpRequests(authorize -> {
-                    authorize.requestMatchers("/login").permitAll();
-                    authorize.requestMatchers("/createnewuser").permitAll();
-                    authorize.anyRequest().authenticated();
+                    authorize.anyRequest().permitAll();
+//                    authorize.requestMatchers("/login").permitAll();
+//                    authorize.requestMatchers("/createnewuser").permitAll();
+//                    authorize.anyRequest().authenticated();
                 })
                 .addFilterBefore(
                         jwtAuthenticationFilter(),
