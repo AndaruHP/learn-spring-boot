@@ -1,5 +1,6 @@
 package com.example.backendtrial.security;
 
+import com.example.backendtrial.security.jwt.JwtAuthenticationFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -31,13 +32,19 @@ public class SecurityConfiguration {
         return httpSecurity
                 .csrf(csrf -> csrf.disable()) // allows for POST, PUT, DELETE
                 .authorizeHttpRequests(authorize -> {
+                    authorize.requestMatchers("/login").permitAll();
                     authorize.requestMatchers("/createnewuser").permitAll();
                     authorize.anyRequest().authenticated();
                 })
-//                .addFilterBefore(
-//                        new BasicAuthenticationFilter(authenticationManager(httpSecurity)),
-//                        UsernamePasswordAuthenticationFilter.class
-//                )
+                .addFilterBefore(
+                        jwtAuthenticationFilter(),
+                        UsernamePasswordAuthenticationFilter.class
+                )
                 .build();
+    }
+
+    @Bean
+    public JwtAuthenticationFilter jwtAuthenticationFilter() {
+        return new JwtAuthenticationFilter();
     }
 }
